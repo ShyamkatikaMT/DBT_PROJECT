@@ -1,0 +1,151 @@
+version: 2
+
+sources:
+ 
+  - name: SAPC11
+    schema: SAPC11
+    database: "{% if target.database == 'DEV_EDW' -%} DEV_RAW{% elif target.database == 'TEST_EDW' -%} PROD_RAW{% elif target.database == 'PROD_EDW' -%} PROD_RAW{% elif target.database == 'UAT_EDW' -%}UAT_RAW
+                {% else -%} INVALID_DATABASE{% endif -%}"
+    tables:
+      - name: KNA1
+        identifier: VW_KNA1
+      - name: KNVP
+        identifier: VW_KNVP
+      - name: ADRC
+        identifier: VW_ADRC
+      - name: KNVK
+        identifier: VW_KNVK
+      - name: ADR6
+        identifier: VW_ADR6
+      - name: KNKK
+        identifier: VW_KNKK
+      - name: KNVI
+        identifier: VW_KNVI
+      - name: KNB1
+        identifier: VW_KNB1
+      - name: KNMT
+        identifier: VW_KNMT
+      - name: KNVV
+        identifier: VW_KNVV
+      - name: VBAK
+        identifier: VW_VBAK
+      - name: VBAP
+        identifier: VW_VBAP
+      - name: VBFA
+        identifier: VW_VBFA
+      - name: VBPA
+        identifier: VW_VBPA
+      - name: VBKD
+        identifier: VW_VBKD
+      - name: VBUK
+        identifier: VW_VBUK
+      - name: T001
+        identifier: VW_T001
+      - name: LIKP
+        identifier: VW_LIKP
+      - name: LIPS
+        identifier: VW_LIPS
+      - name: VBRK
+        identifier: VW_VBRK
+      - name: VBRP
+        identifier: VW_VBRP
+      - name: MARA
+        identifier: VW_MARA
+      - name: MAKT
+        identifier: VW_MAKT
+      - name: MARM
+        identifier: VW_MARM
+      - name: MARC
+        identifier: VW_MARC
+      - name: TVAGT
+        identifier: VW_TVAGT
+      - name: KNVP_STG
+        identifier: VW_KNVP_STG
+      - name: VBEP
+        identifier: VW_VBEP
+      - name: T052
+        identifier: VW_T052
+      - name: T001W
+        identifier: VW_T001W
+      - name: T002
+        identifier: VW_T002
+      - name: T002T
+        identifier: VW_T002T
+      - name: TVTW
+        identifier: VW_TVTW
+      - name: TVTWT
+        identifier: VW_TVTWT
+      - name: T005
+        identifier: VW_T005
+      - name: CSKS
+        identifier: VW_CSKS
+      - name: CSKT
+        identifier: VW_CSKT
+      - name: TSPA
+        identifier: VW_TSPA
+      - name: TSPAT
+        identifier: VW_TSPAT
+      - name: TINC
+        identifier: VW_TINC
+      - name: TINCT
+        identifier: VW_TINCT
+      - name: TVKO
+        identifier: VW_TVKO
+      - name: TVKOT
+        identifier: VW_TVKOT
+      - name: T006
+        identifier: VW_T006
+      - name: T005U
+        identifier: VW_T005U
+      - name: TCURX
+        identifier: VW_TCURX
+      - name: TVBVK
+        identifier: VW_TVBVK
+      - name: TVBUR
+        identifier: VW_TVBUR
+      - name: ZGPP_PORTT
+        identifier: VW_ZGPP_PORTT
+      - name: ZGPP_CATT
+        identifier: VW_ZGPP_CATT
+      - name: ZGPP_DIVT
+        identifier: VW_ZGPP_DIVT
+      - name: ZGPP_SBUT
+        identifier: VW_ZGPP_SBUT
+      - name: CEPC
+        identifier: VW_CEPC
+      - name: CEPCT
+        identifier: VW_CEPCT
+      - name: TVAKT
+        identifier: VW_TVAKT
+      - name: KEKO
+        identifier: VW_KEKO
+      - name: KEPH
+        identifier: VW_KEPH
+      - name: VBUP
+        identifier: VW_VBUP
+      - name: VTTK
+        identifier: VW_VTTK
+      - name: VTFA
+        identifier: VW_VTFA
+      - name: EINA
+        identifier: VW_EINA
+      - name: MARD
+        identifier: VW_MARD
+      - name: AUSP
+        identifier: VW_AUSP
+      - name: KSML
+        identifier: VW_KSML
+      - name: CABN
+        identifier: VW_CABN
+      - name: T001K
+        identifier: VW_T001K
+      - name: T005T
+        identifier: VW_T005T
+      - name: TVTA
+        identifier: VW_TVTA
+      - name: KNVH
+        identifier: VW_KNVH
+      - name: INOB
+        identifier: VW_INOB       
+      - name: T179T
+        identifier: VW_T179T 

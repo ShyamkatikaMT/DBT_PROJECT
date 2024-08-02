@@ -1,0 +1,92 @@
+
+# Name your project! Project names should contain only lowercase characters
+# and underscores. A good package name should reflect your organization's
+# name or the intended use of these models
+name: 'sbd_edw_main'
+version: '1.0.0'
+config-version: 2
+
+# This setting configures which "profile" dbt uses for this project.
+profile: 'default'
+
+# These configurations specify where dbt should look for different types of files.
+# The `source-paths` config, for example, states that models in this project can be
+# found in the "models/" directory. You probably won't need to change these!
+source-paths: ["models"]
+analysis-paths: ["analysis"]
+test-paths: ["tests"]
+data-paths: ["data"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+target-path: "target"  # directory which will store compiled SQL files
+clean-targets:         # directories to be removed by `dbt clean`
+  - "target"
+  - "dbt_modules"
+
+
+# Configuring models
+# Full documentation: https://docs.getdbt.com/docs/configuring-models
+
+# In this example config, we tell dbt to build all models in the example/ directory
+# as tables. These settings can be overridden in the individual model files
+# using the `{{ config(...) }}` macro.
+vars :
+    #default_key: N/A
+  default_key: "'N/A'"
+  default_y: "'Y'"
+  default_mapkey: "'-1'"
+  default_n: "'N'"
+  devrawdb: DEV_RAW
+  temprawdb: TEMP_RAW
+  destdb: DEV_EDW
+  db_destschema: CONSOLIDATED
+  db_devedwdb: DEV_EDW
+  db_srcviewdb: EDW_DBT_VIEWS
+  table_logging: LOGGING
+  table_metadateloaddt: METADATELOADDT
+  table_srcdrivingtbl: SOURCE_DRIVING_TBL
+  table_logdetails: LOGGING_DETAILS
+  table_inforschema: INFORMATION_SCHEMA
+  view_sourcedesttmapView: SOURCEDESTMAP_VW
+  view_metadataupdview: METADATA_UPD_VW
+  column_loadmetadts: LOADMETADTS
+  column_rechashkey: RCRD_HASH_KEY
+  column_destchangekey: DEST_CHANGE_KEY
+  column_srcchangekey: SOURCE_CHANGE_KEY
+  column_verexpirydt: EXPR_DTE
+  column_vereffdte: EFF_DTE
+  column_currrecflag: CURR_RCRD_FLAG
+  column_orprecflag: ORP_RCRD_FLAG
+  column_srcsyskey: SRC_SYS_KEY
+  column_z3loddtm: ZONE3_LOD_DTE
+  column_delfromsrcflag: DEL_FROM_SRC_FLAG
+  column_issorday: ISSQORDAY
+  column_loaddts: LOADDTS
+  column_SRC_RCRD_CREATE_DTE: SRC_RCRD_CREATE_DTE
+  column_SRC_RCRD_CREATE_USERID: SRC_RCRD_CREATE_USERID
+  column_SRC_RCRD_UPD_DTE: SRC_RCRD_UPD_DTE
+  column_SRC_RCRD_UPD_USERID: SRC_RCRD_UPD_USERID
+  column_DEL_FROM_SRC_FLAG: DEL_FROM_SRC_FLAG
+  column_ETL_INS_DTE: ETL_INS_DTE
+  column_ETL_UPD_DTE: ETL_UPD_DTE
+  column_ETL_INS_PID: ETL_INS_PID
+  column_ETL_UPD_PID: ETL_UPD_PID
+  error_sourcecount: "'SOURCE COUNT TABLE DOESNT EXIST IN SOURCE SYSTEM, SO COUNT LOGIC HAS BEEN FAILED'"
+  error_duplicate: DUPLICATE RECORD FOUND PLEASE CHECK UNDERLINE TABLES OR JOINS
+  error_columnmismatch: ColumnMapping does not match between source and destination
+  error_delete: "'CHANGE TABLE DOESNT EXIST IN SOURCE SYSTEM, SO DELETE LOGIC HAS BEEN FAILED'"
+  sapc11mandtftr: "'040'"
+  sape03mandtftr: "'320'"
+  sapp10mandtftr: "'100'"
+  sapshpmandtftr: "'100'"
+
+models:
+  +copy_grants: true 
+  sbd_edw_main:
+    # Config indicated by + and applies to all files under models/example/
+    Main:
+     "Source":
+       materialized: view
+       schema: EDW_DBT_VIEWS
+      
