@@ -1,0 +1,1 @@
+{{sbd_edw_main.Main_call('EDW_LOCATION','BNG','USR_LOCATIONS_VW')}}
