@@ -1,1 +1,12 @@
-{{sbd_edw_main.Main_call('EDW_LOCATION','BNG','USR_LOCATIONS_VW')}}
+{{
+    config(
+        materialized='incremental'
+    )
+}}
+SELECT * FROM {{ref('USR_BNG_LOCATIONS_VW')}}
+union all
+SELECT * FROM {{ref('USR_HYD_LOCATIONS_VW')}}
+union all
+SELECT * FROM {{ref('USR_KLP_LOCATIONS_VW')}}
+union all
+SELECT * FROM {{ref('USR_VSKP_LOCATIONS_VW')}}
