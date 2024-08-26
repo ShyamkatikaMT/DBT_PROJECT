@@ -1,21 +1,71 @@
-
 version: 2
 
-models:
-    - name: my_first_dbt_model
-      description: "A starter dbt model"
-      columns:
-          - name: id
-            description: "The primary key for this table"
-            tests:
-                - unique
-                - not_null
+sources:
+ 
+  - name: BNG_WAREHOUSE
+    schema: AZURE_DB_BNG
+    database:  FIVETRAN_CONNECT_DB
+    tables:
+      - name: USR_LOCATIONS
+        identifier: USR_LOCATIONS
+      - name: USR_DELIVERED_ORDERS
+        identifier: USR_DELIVERED_ORDERS
+      - name: USR_DETAILS
+        identifier: USR_DETAILS      
+      - name: USR_OPEN_ORDERS
+        identifier: USR_OPEN_ORDERS 
+      - name: USR_PICKED_ORDERS
+        identifier: USR_PICKED_ORDERS
+      - name: USR_SHIPPED_ORDERS
+        identifier: USR_SHIPPED_ORDERS
 
-    - name: my_second_dbt_model
-      description: "A starter dbt model"
-      columns:
-          - name: id
-            description: "The primary key for this table"
-            tests:
-                - unique
-                - not_null
+  - name: HYD_WAREHOUSE
+    schema: AZURE_DB_HYD
+    database:  FIVETRAN_CONNECT_DB
+    tables:
+      - name: USR_LOCATIONS
+        identifier: USR_LOCATIONS
+      - name: USR_DELIVERED_ORDERS
+        identifier: USR_DELIVERED_ORDERS
+      - name: USR_DETAILS
+        identifier: USR_DETAILS      
+      - name: USR_OPEN_ORDERS
+        identifier: USR_OPEN_ORDERS 
+      - name: USR_PICKED_ORDERS
+        identifier: USR_PICKED_ORDERS
+      - name: USR_SHIPPED_ORDERS
+        identifier: USR_SHIPPED_ORDERS
+
+  - name: KLP_WAREHOUSE
+    schema: AZURE_DB_KLP
+    database:  FIVETRAN_CONNECT_DB
+    tables:
+      - name: USR_LOCATIONS
+        identifier: USR_LOCATIONS
+      - name: USR_DELIVERED_ORDERS
+        identifier: USR_DELIVERED_ORDERS
+      - name: USR_DETAILS
+        identifier: USR_DETAILS      
+      - name: USR_OPEN_ORDERS
+        identifier: USR_OPEN_ORDERS 
+      - name: USR_PICKED_ORDERS
+        identifier: USR_PICKED_ORDERS
+      - name: USR_SHIPPED_ORDERS
+        identifier: USR_SHIPPED_ORDERS
+
+  - name: VSKP_WAREHOUSE
+    schema: AZURE_DB_VSKP
+    database:  FIVETRAN_CONNECT_DB
+    tables:
+      - name: USR_LOCATIONS
+        identifier: USR_LOCATIONS
+      - name: USR_DELIVERED_ORDERS
+        identifier: USR_DELIVERED_ORDERS
+      - name: USR_DETAILS
+        identifier: USR_DETAILS      
+      - name: USR_OPEN_ORDERS
+        identifier: USR_OPEN_ORDERS 
+      - name: USR_PICKED_ORDERS
+        identifier: USR_PICKED_ORDERS
+      - name: USR_SHIPPED_ORDERS
+        identifier: USR_SHIPPED_ORDERS
