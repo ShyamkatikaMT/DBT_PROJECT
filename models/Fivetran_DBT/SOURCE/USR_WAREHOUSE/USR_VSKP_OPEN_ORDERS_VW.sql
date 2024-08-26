@@ -1,0 +1,2 @@
+SELECT * FROM
+{{source("VSKP_WAREHOUSE", "USR_OPEN_ORDERS")}}

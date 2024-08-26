@@ -1,0 +1,2 @@
+SELECT * FROM
+{{source("KLP_WAREHOUSE", "USR_DETAILS")}}
