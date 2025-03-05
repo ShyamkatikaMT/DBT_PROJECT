@@ -1,0 +1,3 @@
+
+SELECT * FROM
+{{source("VSKP_WAREHOUSE", "USR_LOCATIONS")}}
